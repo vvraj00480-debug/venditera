@@ -809,6 +809,6 @@ if recs is not None and not recs.empty:
 st.markdown("""
 <div class="footer">
   VENDI TERA &nbsp;·&nbsp; Powered by <em>TMDB API</em>
-  &nbsp;·&nbsp; TF-IDF · Cosine Similarity · Scikit-learn
+  &nbsp;·&nbsp; TF-IDF · Cosine Similarity · Scikit-learn · © Enla VishnuVardhan Raj
 </div>
 """, unsafe_allow_html=True)
