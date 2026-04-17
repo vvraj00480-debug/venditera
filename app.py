@@ -629,11 +629,11 @@ def load_engine(pages: int = 25):
 st.markdown('<div class="controls-strip">', unsafe_allow_html=True)
 c1, c2 = st.columns([3, 1])
 with c1:
-    pages = st.slider("Movie library size", 5, 80, 25, 5,
-                      help="Pages × 20 = movies fetched from TMDB. More = richer results.",
-                      label_visibility="collapsed")
+    pages = st.slider("🎞️ Movie Library Size (pages × 20 = total movies)", 5, 80, 25, 5,
+                      help="Pages × 20 = movies fetched from TMDB. More pages = richer recommendations but slower first load.")
 with c2:
-    top_n = st.slider("Results", 3, 16, 8, label_visibility="collapsed")
+    top_n = st.slider("🎯 No. of Recommendations", 3, 16, 8,
+                      help="How many similar movies to show in results.")
 st.markdown('</div>', unsafe_allow_html=True)
 
 with st.spinner(""):
