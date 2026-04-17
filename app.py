@@ -1,6 +1,6 @@
 """
 ==============================================================================
-MODULE: app.py  —  CineMatch Premium
+MODULE: app.py  —  VENDI TERA Premium
 PROJECT: Movie Recommendation System
 ==============================================================================
 """
@@ -10,21 +10,28 @@ import pandas as pd
 import time
 
 st.set_page_config(
-    page_title="CineMatch — Premium Movie Recommender",
+    page_title="VENDI TERA — Premium Movie Recommender",
     page_icon="🎬",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# lawda API KEY
+# API KEY — set TMDB_API_KEY as an environment variable in Render dashboard
 # ═══════════════════════════════════════════════════════════════════════════════
-TMDB_API_KEY = "8a890b865681ab0c50e436d2e2fb2776"
+import os
+# Support both Streamlit Cloud secrets and environment variables
+TMDB_API_KEY = st.secrets.get("TMDB_API_KEY", "") if hasattr(st, "secrets") else ""
+if not TMDB_API_KEY:
+    TMDB_API_KEY = os.environ.get("TMDB_API_KEY", "")
+if not TMDB_API_KEY:
+    st.error("⚠️ TMDB_API_KEY is not set. Add it in Streamlit Cloud → App Settings → Secrets.")
+    st.stop()
 TMDB_IMG     = "https://image.tmdb.org/t/p/w342"
 TMDB_IMG_LG  = "https://image.tmdb.org/t/p/w500"
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# LUXURY CINEMA CSS
+# LUXURY VENDIMA CSS
 # Color proportions:
 #   70%  →  Obsidian base  (#07070b, #0d0d14, #111119)
 #   20%  →  Warm charcoal surface  (#1c1c27, #23232f, #2a2a38)
@@ -589,7 +596,7 @@ for k, v in [("recs", None), ("query", ""), ("elapsed", 0)]:
 # ═══════════════════════════════════════════════════════════════════════════════
 st.markdown("""
 <div class="topbar">
-  <div class="logo">CINE<span class="logo-dot"></span><em>MATCH</em></div>
+  <div class="logo">VENDI<span class="logo-dot"></span><em> TERA</em></div>
   <div class="topbar-tag">Intelligent Film Discovery</div>
 </div>
 """, unsafe_allow_html=True)
@@ -788,11 +795,11 @@ if recs is not None and not recs.empty:
         st.download_button(
             "↓ Export as CSV",
             csv,
-            f"cinematch_{query.replace(' ','_')}.csv",
+            f"VENDI TERA_{query.replace(' ','_')}.csv",
             "text/csv",
         )
     with bot2:
-        with st.expander("Match Score Breakdown"):
+        with st.expander(" TERA Score Breakdown"):
             chart_df = recs[["title", "score"]].set_index("title")
             st.bar_chart(chart_df, color="#c9a84c")
 
@@ -801,7 +808,7 @@ if recs is not None and not recs.empty:
 # ═══════════════════════════════════════════════════════════════════════════════
 st.markdown("""
 <div class="footer">
-  CineMatch &nbsp;·&nbsp; Powered by <em>TMDB API</em>
+  VENDI TERA &nbsp;·&nbsp; Powered by <em>TMDB API</em>
   &nbsp;·&nbsp; TF-IDF · Cosine Similarity · Scikit-learn
 </div>
 """, unsafe_allow_html=True)

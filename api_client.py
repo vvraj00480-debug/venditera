@@ -16,7 +16,7 @@ import time
 import requests
 
 TMDB_BASE = "https://api.themoviedb.org/3"
-CACHE_DIR  = os.path.join(os.path.dirname(__file__), ".cache")
+CACHE_DIR  = os.path.join(os.environ.get("CACHE_DIR", "/tmp"), ".tmdb_cache")
 CACHE_FILE = os.path.join(CACHE_DIR, "tmdb_movies.json")
 
 

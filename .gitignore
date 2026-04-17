@@ -1,0 +1,9 @@
+# Secrets — never commit!
+.streamlit/secrets.toml
+
+# Cache
+.tmdb_cache/
+/tmp/
+__pycache__/
+*.pyc
+.env
