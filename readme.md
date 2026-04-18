@@ -1,8 +1,13 @@
+I’m not usually a README person, but I gave it my best shot here. The project is already deployed on {Streamlit} for quick use, and I’ve also taken the time to write a detailed explanation with the help of ChatGPT for anyone who wants to explore it more deeply.   ↓
+                                                                                                           ↓                                                                                                                                                            ↓                                                                                                                                                            ↓
+                                                                                           https://venditera.streamlit.app/
+                                                                                          
+
+
+
 # 🎬 CineMatch — Movie Recommendation System
 
 > *An intelligent, content-aware movie recommendation engine built with Python, Scikit-learn, and Streamlit.*
-
----
 
 ## 📋 Table of Contents
 
@@ -64,8 +69,8 @@ Raw Data (TMDB CSV)
     │                 │
     ▼                 ▼
 Content-Based     Collaborative
-  Engine            Engine
-(TF-IDF +        (Item-based CF
+  Engine            Engine             [I created this project while learning the concepts at the same time, using ChatGPT for guidance since I didn’t have
+(TF-IDF +        (Item-based CF         much awareness in this area of data.]
  cosine sim)      synthetic UIM)
     │                 │
     └────────┬────────┘
@@ -236,7 +241,7 @@ The app will automatically download the TMDB dataset on first launch (~10 MB) an
 
 ## 8. Usage
 
-1. Open the browser tab that Streamlit launches (default: `http://localhost:8501`).  
+1. Open the browser tab that Streamlit launches at local host.
 2. Use the **sidebar** to choose:
    - Engine type (Content-Based or Hybrid)  
    - Number of recommendations (3–20)  
@@ -289,4 +294,4 @@ Match % is computed as:
 
 ---
 
-*Built with ❤️ using Python · Pandas · Scikit-learn · Streamlit*
+*Built with ❤️ using Python · Pandas · Scikit-learn · Streamlit and a bit of guidance from chatgpt.* 
