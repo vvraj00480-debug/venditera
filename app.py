@@ -812,3 +812,9 @@ st.markdown("""
   &nbsp;·&nbsp; TF-IDF · Cosine Similarity · Scikit-learn · © Enla VishnuVardhan Raj
 </div>
 """, unsafe_allow_html=True)
+
+# ═══════════════════════════════════ Msg ═══════════════════════════════════
+# This code includes section headings generated with assistance from ChatGPT
+# to enhance readability, organization, and maintainability.
+# Each section is clearly labeled to help future developers navigate efficiently.
+# ═══════════════════════════════════════════════════════════════════════════
